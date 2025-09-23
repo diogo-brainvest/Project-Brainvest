@@ -1,0 +1,43 @@
+.home-container {
+  min-height: 100vh;
+  width: 100%;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Estilos básicos para cards */
+.stat-card, .dashboard-card, .tip-card, .blog-card {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+}
+
+/* Cores básicas */
+:root {
+  --primary-color: #1976d2;
+  --secondary-color: #dc004e;
+  --success-color: #388e3c;
+  --warning-color: #f57c00;
+  --error-color: #d32f2f;
+  --info-color: #0288d1;
+  --text-primary: #333;
+  --text-secondary: #666;
+  --background: #fff;
+}

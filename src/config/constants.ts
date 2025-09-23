@@ -13,14 +13,25 @@ export const DATA_SOURCES = {
   IBGE: 'Instituto Brasileiro de Geografia e Estatística',
 } as const;
 
-export const CHART_COLORS = {
-  PRIMARY: '#3B82F6',
-  SUCCESS: '#10B981',
-  WARNING: '#F59E0B',
-  DANGER: '#EF4444',
-  PURPLE: '#8B5CF6',
-  GRADIENT: ['#3B82F6', '#10B981', '#F59E0B', '#EF4444', '#8B5CF6'],
-} as const;
+export const COLORS = {
+  primary: '#1976d2',
+  secondary: '#dc004e',
+  success: '#388e3c',
+  warning: '#f57c00',
+  error: '#d32f2f',
+  info: '#0288d1'
+};
+
+export const CHART_COLORS = [
+  '#1976d2',
+  '#dc004e',
+  '#388e3c',
+  '#f57c00',
+  '#9c27b0',
+  '#00796b',
+  '#5d4037',
+  '#616161'
+];
 
 export const CACHE_DURATION = {
   SHORT: 5 * 60 * 1000, // 5 minutos

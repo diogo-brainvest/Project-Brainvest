@@ -18,17 +18,13 @@ export const useSmoothScroll = () => {
   }, []);
 
   const handleCTAClick = useCallback(() => {
-    alert('Funcionalidade em desenvolvimento!');
-  }, []);
-
-  const initializeSmoothScroll = useCallback(() => {
-    // Return empty cleanup function
-    return () => {};
+    if (typeof window !== 'undefined') {
+      alert('Funcionalidade em desenvolvimento!');
+    }
   }, []);
 
   return {
     handleNavigateToSection,
-    handleCTAClick,
-    initializeSmoothScroll
+    handleCTAClick
   };
 };

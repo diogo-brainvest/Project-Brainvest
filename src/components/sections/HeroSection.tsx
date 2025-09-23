@@ -51,7 +51,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       <div className="hero__stats">
         {loading ? (
           <div className="stats-loading">
-            <LoadingSpinner size="large" />
+            <LoadingSpinner size={50} />
             <p>Carregando estatísticas...</p>
           </div>
         ) : error ? (

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useEndividamentoData, useEstatisticasGerais } from '../hooks/useEndividamentoData';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { useSmoothScroll } from '../hooks/useSmoothScroll';
 import Header from '../components/sections/Header';
 import HeroSection from '../components/sections/HeroSection';
@@ -9,7 +8,7 @@ import TipsSection from '../components/sections/TipsSection';
 import BlogSection from '../components/sections/BlogSection';
 import CTASection from '../components/sections/CTASection';
 import Footer from '../components/sections/Footer';
-import './Home.css';
+import './Home.production.css';
 
 const Home: React.FC = () => {
   const [mounted, setMounted] = useState(false);
@@ -21,12 +20,8 @@ const Home: React.FC = () => {
   const { data: endividamentoData, loading: loadingEndividamento, error: errorEndividamento } = useEndividamentoData();
   const { stats, loading: loadingStats, error: errorStats } = useEstatisticasGerais();
   const { handleNavigateToSection, handleCTAClick } = useSmoothScroll();
-  
-  useScrollAnimation({ 
-    selectors: ['.stat-card', '.dashboard-card', '.tip-card', '.blog-card'],
-    threshold: 150
-  });
 
+  // Loading state mais simples
   if (!mounted) {
     return (
       <div style={{ 
@@ -34,9 +29,10 @@ const Home: React.FC = () => {
         display: 'flex', 
         justifyContent: 'center', 
         alignItems: 'center',
-        fontFamily: 'Arial, sans-serif'
+        fontFamily: 'Arial, sans-serif',
+        fontSize: '18px'
       }}>
-        Carregando...
+        Carregando Brainvest...
       </div>
     );
   }

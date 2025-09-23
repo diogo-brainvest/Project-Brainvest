@@ -1,14 +1,39 @@
 export const formatCurrency = (value: number): string => {
-  return new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL',
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0,
-  }).format(value);
+  try {
+    return new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency: 'BRL'
+    }).format(value);
+  } catch {
+    return `R$ ${value.toFixed(2).replace('.', ',')}`;
+  }
 };
 
-export const formatPercentage = (value: number, decimals = 1): string => {
-  return `${value.toFixed(decimals)}%`;
+export const formatPercentage = (value: number): string => {
+  try {
+    return `${value.toFixed(1)}%`;
+  } catch {
+    return '0%';
+  }
+};
+
+export const formatNumber = (value: number): string => {
+  try {
+    return new Intl.NumberFormat('pt-BR').format(value);
+  } catch {
+    return value.toString();
+  }
+};
+
+// Simplificar função de delay
+export const delay = (ms: number): Promise<void> => {
+  return new Promise(resolve => setTimeout(resolve, ms));
+};
+
+// Remover função complexa que estava causando problemas
+export const simulateApiCall = async <T>(data: T): Promise<T> => {
+  await delay(100);
+  return data;
 };
 
 export const formatDate = (date: Date | string): string => {

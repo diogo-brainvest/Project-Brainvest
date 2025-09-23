@@ -11,10 +11,14 @@ export const useScrollAnimation = ({
 }: UseScrollAnimationOptions) => {
   
   useEffect(() => {
-    // Only run on client side
+    // Não executar durante SSR
     if (typeof window === 'undefined') return;
 
+    let mounted = true;
+
     const animateOnScroll = () => {
+      if (!mounted) return;
+      
       try {
         const elements = document.querySelectorAll(selectors.join(', '));
         
@@ -33,6 +37,8 @@ export const useScrollAnimation = ({
     };
 
     const initializeAnimations = () => {
+      if (!mounted) return;
+      
       try {
         const elements = document.querySelectorAll(selectors.join(', '));
         
@@ -47,14 +53,18 @@ export const useScrollAnimation = ({
       }
     };
 
-    // Initialize after a short delay
-    setTimeout(() => {
-      initializeAnimations();
-      animateOnScroll();
-      window.addEventListener('scroll', animateOnScroll);
-    }, 100);
+    // Aguardar o DOM estar completamente carregado
+    const timer = setTimeout(() => {
+      if (mounted && document.readyState === 'complete') {
+        initializeAnimations();
+        animateOnScroll();
+        window.addEventListener('scroll', animateOnScroll);
+      }
+    }, 500);
 
     return () => {
+      mounted = false;
+      clearTimeout(timer);
       window.removeEventListener('scroll', animateOnScroll);
     };
   }, [selectors, threshold]);

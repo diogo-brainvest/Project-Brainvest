@@ -22,7 +22,7 @@ const DashboardSection: React.FC<DashboardSectionProps> = ({
       
       {loading ? (
         <div className="dashboard-loading">
-          <LoadingSpinner size="large" />
+          <LoadingSpinner size={50} />
           <p>Carregando dados do endividamento...</p>
         </div>
       ) : error ? (
