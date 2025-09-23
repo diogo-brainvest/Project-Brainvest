@@ -1,9 +1,17 @@
 import { useState, useEffect } from 'react';
-import { 
-  mockEndividamentoData, 
-  mockEstatisticasGerais 
-} from '../data/mockData';
 import type { EndividamentoData, EstatisticasGerais } from '../types';
+
+// Import dados de forma mais segura
+let mockEndividamentoData: EndividamentoData | null = null;
+let mockEstatisticasGerais: EstatisticasGerais | null = null;
+
+try {
+  const mockDataModule = require('../data/mockData');
+  mockEndividamentoData = mockDataModule.mockEndividamentoData;
+  mockEstatisticasGerais = mockDataModule.mockEstatisticasGerais;
+} catch (error) {
+  console.error('Error importing mock data:', error);
+}
 
 export const useEndividamentoData = () => {
   const [data, setData] = useState<EndividamentoData | null>(null);
@@ -11,14 +19,23 @@ export const useEndividamentoData = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    try {
-      // Set data immediately without delay
-      setData(mockEndividamentoData);
-      setLoading(false);
-    } catch (err) {
-      setError('Erro ao carregar dados');
-      setLoading(false);
-    }
+    // Add a small delay to ensure proper hydration
+    const timer = setTimeout(() => {
+      try {
+        if (mockEndividamentoData) {
+          setData(mockEndividamentoData);
+        } else {
+          setError('Dados não disponíveis');
+        }
+        setLoading(false);
+      } catch (err) {
+        console.error('Error setting data:', err);
+        setError('Erro ao carregar dados');
+        setLoading(false);
+      }
+    }, 100);
+
+    return () => clearTimeout(timer);
   }, []);
 
   return { data, loading, error };
@@ -30,13 +47,22 @@ export const useEstatisticasGerais = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    try {
-      setStats(mockEstatisticasGerais);
-      setLoading(false);
-    } catch (err) {
-      setError('Erro ao carregar estatísticas');
-      setLoading(false);
-    }
+    const timer = setTimeout(() => {
+      try {
+        if (mockEstatisticasGerais) {
+          setStats(mockEstatisticasGerais);
+        } else {
+          setError('Estatísticas não disponíveis');
+        }
+        setLoading(false);
+      } catch (err) {
+        console.error('Error setting stats:', err);
+        setError('Erro ao carregar estatísticas');
+        setLoading(false);
+      }
+    }, 100);
+
+    return () => clearTimeout(timer);
   }, []);
 
   return { stats, loading, error };
