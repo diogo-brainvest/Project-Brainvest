@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useEndividamentoData, useEstatisticasGerais } from '../hooks/useEndividamentoData';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { useSmoothScroll } from '../hooks/useSmoothScroll';
@@ -21,8 +21,12 @@ import '../components/RefactoredStyles.css';
  * - Hooks customizados para lógica reutilizável
  * - Dados mockados baseados em fontes reais
  * - Estrutura limpa e maintível
+ * - Proteção contra SSR/hidratation issues
  */
 const Home: React.FC = () => {
+  // Add state to check if we're on the client
+  const [mounted, setMounted] = useState(false);
+  
   // Hooks para dados
   const { data: endividamentoData, loading: loadingEndividamento, error: errorEndividamento } = useEndividamentoData();
   const { stats, loading: loadingStats, error: errorStats } = useEstatisticasGerais();
@@ -36,11 +40,21 @@ const Home: React.FC = () => {
     threshold: 150
   });
 
-  // Inicialização de comportamentos
+  // Initialize behaviors only on client
   useEffect(() => {
+    setMounted(true);
     const cleanup = initializeSmoothScroll();
     return cleanup;
   }, [initializeSmoothScroll]);
+
+  // Show a simple loading state if not mounted yet
+  if (!mounted) {
+    return (
+      <div className="home-container" style={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <p>Carregando...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="home-container">

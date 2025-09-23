@@ -1,13 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Home from './home/Home';
+import ErrorBoundary from './components/ErrorBoundary';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+// Make sure this element actually exists in your HTML
+const rootElement = document.getElementById('root');
 
-root.render(
-  <React.StrictMode>
-    <Home />
-  </React.StrictMode>
-);
+if (rootElement) {
+  const root = ReactDOM.createRoot(rootElement);
+  
+  root.render(
+    <React.StrictMode>
+      <ErrorBoundary>
+        <Home />
+      </ErrorBoundary>
+    </React.StrictMode>
+  );
+} else {
+  console.error("Root element with ID 'root' not found");
+}

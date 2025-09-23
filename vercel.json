@@ -15,7 +15,11 @@
       "dest": "/index.html"
     }
   ],
-  "env": {
-    "NODE_ENV": "production"
-  }
+  "functions": {
+    "app/api/**/*.ts": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "buildCommand": "npm run build",
+  "outputDirectory": "build"
 }

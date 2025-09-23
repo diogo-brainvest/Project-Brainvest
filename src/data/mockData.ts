@@ -367,9 +367,9 @@ export const tipsData = [
   {
     id: 'selic-oportunidade',
     icon: '⚡',
-    title: 'Selic 11,25% = OPORTUNIDADE',
-    description: 'Bancos estão desesperados para renegociar - APROVEITE',
-    statistic: 'Até 95% de desconto disponível AGORA',
+    title: 'Selic 15,00% = OPORTUNIDADE ?',
+    description: 'Veja o que especialistas recomendam a fazer',
+    statistic: 'Hora de repensar se compra ou não aquele Ape ?',
     urgency: 'JANELA DE OPORTUNIDADE - Máximo 60 dias'
   }
 ];

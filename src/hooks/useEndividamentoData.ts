@@ -19,8 +19,13 @@ export const useEndividamentoData = () => {
       setLoading(true);
       setError(null);
       
-      // Simula latência de API real com dados de 2025
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      // Check if mockEndividamentoData exists and has required properties
+      if (!mockEndividamentoData || !mockEndividamentoData.porRegiao) {
+        throw new Error('Dados mockados não encontrados ou incompletos');
+      }
+      
+      // Simula latência de API real com dados de 2025 (reduzido para melhor performance)
+      await new Promise(resolve => setTimeout(resolve, 500));
       
       // Adiciona pequena variação para simular dados em tempo real
       const dataWithVariation = {
@@ -37,21 +42,31 @@ export const useEndividamentoData = () => {
       // Log para desenvolvimento - dados atualizados de 2025
       console.log('📊 Dados de endividamento 2025 carregados:', {
         endividamento: `${dataWithVariation.porRegiao.sudeste.toFixed(1)}%`,
-        fonte: dataWithVariation.metadata.fonte,
-        ultimaAtualizacao: dataWithVariation.metadata.ultimaAtualizacao
+        fonte: dataWithVariation.metadata?.fonte || 'Dados mockados',
+        ultimaAtualizacao: dataWithVariation.metadata?.ultimaAtualizacao || new Date().toISOString()
       });
       
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Erro ao carregar dados de endividamento';
       setError(errorMessage);
       console.error('Erro no useEndividamentoData:', err);
+      
+      // Set fallback data if available
+      if (mockEndividamentoData) {
+        setData(mockEndividamentoData);
+      }
     } finally {
       setLoading(false);
     }
   }, []);
 
   useEffect(() => {
-    fetchData();
+    // Add a small delay to prevent SSR issues
+    const timer = setTimeout(() => {
+      fetchData();
+    }, 100);
+    
+    return () => clearTimeout(timer);
   }, [fetchData]);
 
   const refetch = useCallback(() => {
@@ -78,26 +93,45 @@ export const useEstatisticasGerais = () => {
       setLoading(true);
       setError(null);
       
-      // Simula um delay de carregamento diferente para demonstrar carregamentos independentes
-      await new Promise(resolve => setTimeout(resolve, 800));
+      // Check if mockEstatisticasGerais exists
+      if (!mockEstatisticasGerais) {
+        throw new Error('Estatísticas gerais não encontradas');
+      }
+      
+      // Simula um delay de carregamento reduzido
+      await new Promise(resolve => setTimeout(resolve, 300));
       
       setStats(mockEstatisticasGerais);
       
       // Log das novas modalidades críticas de 2025
-      console.log('⚠️ Alertas críticos 2025:', alertasCriticos2025);
-      console.log('🚀 Novas modalidades em alta:', novasModalidades2025.slice(0, 2));
+      if (alertasCriticos2025 && Array.isArray(alertasCriticos2025)) {
+        console.log('⚠️ Alertas críticos 2025:', alertasCriticos2025);
+      }
+      if (novasModalidades2025 && Array.isArray(novasModalidades2025)) {
+        console.log('🚀 Novas modalidades em alta:', novasModalidades2025.slice(0, 2));
+      }
       
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Erro ao carregar estatísticas';
       setError(errorMessage);
       console.error('Erro no useEstatisticasGerais:', err);
+      
+      // Set fallback data if available
+      if (mockEstatisticasGerais) {
+        setStats(mockEstatisticasGerais);
+      }
     } finally {
       setLoading(false);
     }
   }, []);
 
   useEffect(() => {
-    fetchStats();
+    // Add a small delay to prevent SSR issues
+    const timer = setTimeout(() => {
+      fetchStats();
+    }, 50);
+    
+    return () => clearTimeout(timer);
   }, [fetchStats]);
 
   const refetch = useCallback(() => {
