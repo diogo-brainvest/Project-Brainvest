@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 interface UseScrollAnimationOptions {
   threshold?: number;
@@ -9,69 +9,53 @@ export const useScrollAnimation = ({
   selectors, 
   threshold = 150 
 }: UseScrollAnimationOptions) => {
-  const [isClient, setIsClient] = useState(false);
-
-  // Only run on client, not during SSR
+  
   useEffect(() => {
-    setIsClient(true);
-  }, []);
+    // Only run on client side
+    if (typeof window === 'undefined') return;
 
-  const animateOnScroll = useCallback(() => {
-    // Don't run during SSR
-    if (!isClient) return;
-    
-    try {
-      const elements = document.querySelectorAll(selectors.join(', '));
-      
-      elements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
+    const animateOnScroll = () => {
+      try {
+        const elements = document.querySelectorAll(selectors.join(', '));
         
-        if (elementTop < window.innerHeight - threshold) {
+        elements.forEach(element => {
+          const elementTop = element.getBoundingClientRect().top;
+          
+          if (elementTop < window.innerHeight - threshold) {
+            const el = element as HTMLElement;
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+          }
+        });
+      } catch (err) {
+        console.error('Animation error:', err);
+      }
+    };
+
+    const initializeAnimations = () => {
+      try {
+        const elements = document.querySelectorAll(selectors.join(', '));
+        
+        elements.forEach(element => {
           const el = element as HTMLElement;
-          el.style.opacity = '1';
-          el.style.transform = 'translateY(0)';
-        }
-      });
-    } catch (err) {
-      console.error('Error in animateOnScroll:', err);
-    }
-  }, [selectors, threshold, isClient]);
+          el.style.opacity = '0';
+          el.style.transform = 'translateY(50px)';
+          el.style.transition = 'all 0.6s ease';
+        });
+      } catch (err) {
+        console.error('Initialize animation error:', err);
+      }
+    };
 
-  const initializeAnimations = useCallback(() => {
-    // Don't run during SSR
-    if (!isClient) return;
-    
-    try {
-      const elements = document.querySelectorAll(selectors.join(', '));
-      
-      elements.forEach(element => {
-        const el = element as HTMLElement;
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(50px)';
-        el.style.transition = 'all 0.6s ease';
-      });
-    } catch (err) {
-      console.error('Error in initializeAnimations:', err);
-    }
-  }, [selectors, isClient]);
-
-  useEffect(() => {
-    // Don't run during SSR
-    if (!isClient) return;
-
-    // Wait for DOM to be ready
-    const timer = setTimeout(() => {
+    // Initialize after a short delay
+    setTimeout(() => {
       initializeAnimations();
-      animateOnScroll(); // Initial check
-      
+      animateOnScroll();
       window.addEventListener('scroll', animateOnScroll);
     }, 100);
-    
+
     return () => {
-      clearTimeout(timer);
       window.removeEventListener('scroll', animateOnScroll);
     };
-  }, [animateOnScroll, initializeAnimations, isClient]);
-
-  return { animateOnScroll, initializeAnimations };
+  }, [selectors, threshold]);
 };

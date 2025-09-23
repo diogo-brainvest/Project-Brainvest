@@ -1,13 +1,13 @@
 import React from 'react';
-import { useAlertasCriticos2025, useNovasModalidades2025 } from '../../hooks/useEndividamentoData';
+import { alertasCriticos2025 } from '../../data/mockData';
 
 interface AlertasCriticos2025Props {
   showDetails?: boolean;
 }
 
 const AlertasCriticos2025: React.FC<AlertasCriticos2025Props> = ({ showDetails = false }) => {
-  const { alertasCriticos, alertasAltos } = useAlertasCriticos2025();
-  const { modalidadeMaiorCrescimento } = useNovasModalidades2025();
+  const alertasCriticos = alertasCriticos2025.filter(alerta => alerta.gravidade === 'Crítica');
+  const alertasAltos = alertasCriticos2025.filter(alerta => alerta.gravidade === 'Alta');
 
   return (
     <div className="alertas-criticos-2025">
@@ -42,16 +42,16 @@ const AlertasCriticos2025: React.FC<AlertasCriticos2025Props> = ({ showDetails =
         ))}
       </div>
 
-      {showDetails && modalidadeMaiorCrescimento && (
+      {showDetails && (
         <div className="destaque-modalidade">
           <h4>🚀 Modalidade em Explosão</h4>
           <div className="modalidade-card">
-            <div className="modalidade-nome">{modalidadeMaiorCrescimento.nome}</div>
+            <div className="modalidade-nome">PIX Parcelado</div>
             <div className="modalidade-crescimento">
-              +{modalidadeMaiorCrescimento.crescimento.toFixed(1)}%
+              +245.7%
             </div>
             <p>Modalidade de maior crescimento em 2025</p>
-            <div className="modalidade-risco">Risco: {modalidadeMaiorCrescimento.risco}</div>
+            <div className="modalidade-risco">Risco: Alto</div>
           </div>
         </div>
       )}
