@@ -120,7 +120,7 @@ export const useNovasModalidades2025 = () => {
 
   const getModalidadeMaiorCrescimento = useCallback(() => {
     return modalidades.reduce((prev, current) => 
-      prev.crescimento2025 > current.crescimento2025 ? prev : current
+      prev.crescimento > current.crescimento ? prev : current
     );
   }, [modalidades]);
 
@@ -149,7 +149,7 @@ export const useIndicadoresEconomicos2025 = () => {
   }, [indicadores]);
 
   const getStatusInflacao = useCallback(() => {
-    const inflacao = indicadores.inflacaoAcumulada;
+    const inflacao = indicadores.inflacao;
     if (inflacao > 6) return 'Inflação alta';
     if (inflacao > 4.5) return 'Inflação no teto da meta';
     return 'Inflação controlada';

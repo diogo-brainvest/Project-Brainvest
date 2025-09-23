@@ -22,7 +22,7 @@ const AlertasCriticos2025: React.FC<AlertasCriticos2025Props> = ({ showDetails =
             <div className="alerta-icon">⚠️</div>
             <div className="alerta-content">
               <h4>{alerta.tipo}</h4>
-              <div className="alerta-valor">{alerta.valor}</div>
+              <div className="alerta-valor">{alerta.percentual}%</div>
               <p>{alerta.descricao}</p>
             </div>
             <div className="alerta-status critical">CRÍTICO</div>
@@ -34,7 +34,7 @@ const AlertasCriticos2025: React.FC<AlertasCriticos2025Props> = ({ showDetails =
             <div className="alerta-icon">⚡</div>
             <div className="alerta-content">
               <h4>{alerta.tipo}</h4>
-              <div className="alerta-valor">{alerta.valor}</div>
+              <div className="alerta-valor">{alerta.percentual}%</div>
               <p>{alerta.descricao}</p>
             </div>
             <div className="alerta-status high">ALTO</div>
@@ -48,10 +48,10 @@ const AlertasCriticos2025: React.FC<AlertasCriticos2025Props> = ({ showDetails =
           <div className="modalidade-card">
             <div className="modalidade-nome">{modalidadeMaiorCrescimento.nome}</div>
             <div className="modalidade-crescimento">
-              +{modalidadeMaiorCrescimento.crescimento2025.toFixed(1)}%
+              +{modalidadeMaiorCrescimento.crescimento.toFixed(1)}%
             </div>
-            <p>{modalidadeMaiorCrescimento.descricao}</p>
-            <div className="modalidade-risco">{modalidadeMaiorCrescimento.risco}</div>
+            <p>Modalidade de maior crescimento em 2025</p>
+            <div className="modalidade-risco">Risco: {modalidadeMaiorCrescimento.risco}</div>
           </div>
         </div>
       )}
