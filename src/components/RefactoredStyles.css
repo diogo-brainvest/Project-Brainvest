@@ -1,0 +1,157 @@
+/* Estilos adicionais para os componentes refatorados */
+
+/* Navegação aprimorada */
+.nav__link {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.nav__link:hover {
+  color: var(--text-primary);
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+/* Cards aprimorados */
+.blog-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.blog-card__date,
+.blog-card__category,
+.blog-card__read-time {
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.blog-card__date {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: var(--accent-color);
+}
+
+.blog-card__category {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: var(--success-color);
+}
+
+.blog-card__read-time {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: var(--warning-color);
+}
+
+.blog-card__link,
+.tip-card__link {
+  background: none;
+  border: none;
+  color: var(--accent-color);
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.blog-card__link:hover,
+.tip-card__link:hover {
+  color: var(--text-primary);
+  transform: translateX(4px);
+}
+
+/* Loading e Error states aprimorados */
+.stats-loading,
+.dashboard-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  gap: 1rem;
+}
+
+.stats-error,
+.dashboard-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: var(--danger-color);
+  text-align: center;
+}
+
+.error-details {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
+}
+
+/* Metadados do dashboard */
+.dashboard-metadata {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1.5rem;
+  background-color: var(--secondary-color);
+  border-radius: 0.75rem;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  margin-top: 1rem;
+}
+
+.metadata-item {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.metadata-item strong {
+  color: var(--text-primary);
+  margin-right: 0.5rem;
+}
+
+/* Footer aprimorado */
+.footer-disclaimer {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-top: 1rem;
+  line-height: 1.5;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsividade aprimorada para telas pequenas */
+@media (max-width: 768px) {
+  .nav__menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .blog-card__meta {
+    justify-content: center;
+  }
+  
+  .dashboard-metadata {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .metadata-item {
+    text-align: center;
+  }
+}

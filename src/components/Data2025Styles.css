@@ -1,0 +1,261 @@
+/* Estilos para os novos componentes de dados 2025 */
+
+/* Alertas Críticos 2025 */
+.alertas-criticos-2025 {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 2rem 0;
+  border: 2px solid #ef4444;
+  position: relative;
+  overflow: hidden;
+}
+
+.alertas-criticos-2025::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ef4444, #f59e0b, #ef4444);
+  animation: pulse-warning 2s ease-in-out infinite;
+}
+
+@keyframes pulse-warning {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.alertas-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.alertas-header h3 {
+  color: #ef4444;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.live-indicator {
+  background: #ef4444;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  animation: blink 1.5s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0.5; }
+}
+
+.alertas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.alerta-card {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.alerta-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(239, 68, 68, 0.2);
+}
+
+.alerta-card.high {
+  background: rgba(245, 158, 11, 0.1);
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.alerta-card.high:hover {
+  box-shadow: 0 10px 25px rgba(245, 158, 11, 0.2);
+}
+
+.alerta-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.alerta-content h4 {
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.alerta-valor {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ef4444;
+  margin-bottom: 0.5rem;
+}
+
+.alerta-card.high .alerta-valor {
+  color: #f59e0b;
+}
+
+.alerta-content p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.alerta-status {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.alerta-status.critical {
+  background: #ef4444;
+  color: white;
+}
+
+.alerta-status.high {
+  background: #f59e0b;
+  color: white;
+}
+
+/* Destaque da Modalidade */
+.destaque-modalidade {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.destaque-modalidade h4 {
+  color: var(--accent-color);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.modalidade-card {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.modalidade-nome {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.modalidade-crescimento {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #10b981;
+  margin-bottom: 0.5rem;
+}
+
+.modalidade-risco {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  display: inline-block;
+}
+
+.fonte-alertas {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Cards de dicas atualizadas para 2025 */
+.tip-card-2025 {
+  position: relative;
+  overflow: hidden;
+}
+
+.tip-card-2025.urgent::before {
+  content: 'URGENTE';
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #ef4444;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%);
+}
+
+.tip-urgency {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+/* Blog cards com trending indicator */
+.blog-card-trending {
+  position: relative;
+}
+
+.blog-card-trending::after {
+  content: '🔥 TRENDING';
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: linear-gradient(45deg, #ef4444, #f59e0b);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .alertas-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .alertas-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .alerta-valor {
+    font-size: 1.5rem;
+  }
+  
+  .modalidade-crescimento {
+    font-size: 1.5rem;
+  }
+}

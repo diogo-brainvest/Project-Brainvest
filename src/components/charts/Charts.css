@@ -1,0 +1,294 @@
+/* Charts CSS */
+.regional-chart {
+  padding: 1rem 0;
+}
+
+.chart-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.chart-bar-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.chart-bar-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.chart-bar-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 4px;
+  height: 24px;
+}
+
+.chart-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.8s ease;
+  min-width: 2px;
+}
+
+.chart-bar-value {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+/* Age Chart */
+.age-chart {
+  padding: 1rem 0;
+}
+
+.age-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.age-bar-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.age-bar-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.age-bar-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.age-bar-value {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  min-width: 45px;
+  text-align: right;
+}
+
+.age-bar-container {
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 4px;
+  height: 24px;
+  position: relative;
+}
+
+.age-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.8s ease;
+  min-width: 2px;
+}
+
+.age-insights {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.age-summary {
+  padding: 1rem;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 8px;
+  border-left: 3px solid var(--accent-color);
+}
+
+.age-highlight {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+}
+
+.age-highlight.primary {
+  background: rgba(59, 130, 246, 0.1);
+  padding: 0.75rem;
+  border-radius: 8px;
+}
+
+.age-highlight span {
+  color: var(--text-secondary);
+}
+
+.age-highlight strong {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.highlight-icon {
+  font-size: 1.2rem;
+}
+
+/* Regional Chart Insights */
+.regional-insights {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Debt Type Chart */
+.debt-type-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.debt-type-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.debt-type-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.debt-type-icon {
+  font-size: 1.2rem;
+}
+
+.debt-type-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.debt-type-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 4px;
+  height: 24px;
+}
+
+.debt-type-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.8s ease;
+  min-width: 2px;
+}
+
+.debt-type-value {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+.debt-insights {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.insight-item {
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.insight-item.primary {
+  background: rgba(59, 130, 246, 0.1);
+  border-left: 3px solid var(--accent-color);
+}
+
+.insight-item.tip {
+  background: rgba(16, 185, 129, 0.1);
+  border-left: 3px solid #10B981;
+}
+
+.insight-item.warning {
+  background: rgba(245, 158, 11, 0.1);
+  border-left: 3px solid #F59E0B;
+}
+
+.insight-item p {
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.insight-icon, .tip-icon, .warning-icon {
+  font-size: 1rem;
+  margin-top: 0.1rem;
+}
+
+/* Animações */
+.debt-type-item.animated {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideInUp 0.6s ease forwards;
+}
+
+.debt-type-fill.animated-fill {
+  width: 0 !important;
+  animation: expandWidth 1s ease forwards;
+}
+
+@keyframes slideInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes expandWidth {
+  to {
+    width: var(--target-width) !important;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .chart-bars, .age-bars {
+    gap: 0.75rem;
+  }
+  
+  .chart-bar-container, .age-bar-container, .debt-type-bar {
+    height: 18px;
+  }
+  
+  .chart-bar-value, .debt-type-value {
+    font-size: 0.7rem;
+    position: relative !important;
+    z-index: 10;
+  }
+}
