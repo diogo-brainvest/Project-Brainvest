@@ -9,6 +9,7 @@ import BlogSection from '../components/sections/BlogSection';
 import CTASection from '../components/sections/CTASection';
 import Footer from '../components/sections/Footer';
 import './Home.production.css';
+import './Home.css';
 
 const Home: React.FC = () => {
   const [mounted, setMounted] = useState(false);
