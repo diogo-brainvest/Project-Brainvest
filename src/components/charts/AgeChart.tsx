@@ -27,10 +27,10 @@ const AgeChart: React.FC<AgeChartProps> = ({
     const dataRecord = Object.entries(data).reduce((acc, [key, value]) => ({ ...acc, [key]: value }), {} as Record<string, number>);
     const insight = generateInsight(dataRecord, 'age');
 
-    return { ageGroups, sortedGroups, maxValue, topGroup, insight };
+    return { ageGroups, maxValue, topGroup, insight };
   }, [data]);
 
-  const { ageGroups, sortedGroups, maxValue, topGroup, insight } = chartData;
+  const { ageGroups, maxValue, topGroup, insight } = chartData;
 
   return (
     <div className="age-chart">

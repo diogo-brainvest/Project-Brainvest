@@ -68,7 +68,8 @@ export const retry = async <T>(
     } catch (error) {
       attempts++;
       if (attempts >= maxAttempts) throw error;
-      await new Promise(resolve => setTimeout(resolve, delay * attempts));
+      const currentDelay = delay * attempts;
+      await new Promise(resolve => setTimeout(resolve, currentDelay));
     }
   }
   
