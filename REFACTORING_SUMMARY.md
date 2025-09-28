@@ -1,4 +1,4 @@
-# 📋 Resumo da Refatoração - Finance Helper
+# 📋 Resumo da Refatoração - Probono Finance
 
 ## ✅ Melhorias Implementadas
 

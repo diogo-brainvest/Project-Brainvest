@@ -1,6 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './home/Home';
+import NoticiaPix from './pages/NoticiaPix';
+import PrimeirosPassosInvestir from './pages/PrimeirosPassosInvestir';
+import EvitarDividasCartao from './pages/EvitarDividasCartao';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -8,6 +12,13 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <Home />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/noticia/pix-parcelado-2025" element={<NoticiaPix />} />
+        <Route path="/blog/primeiros-passos-investir" element={<PrimeirosPassosInvestir />} />
+        <Route path="/blog/evitar-dividas-cartao-credito" element={<EvitarDividasCartao />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );

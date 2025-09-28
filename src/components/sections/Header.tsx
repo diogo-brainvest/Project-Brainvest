@@ -9,7 +9,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate }) => (
   <header className="header">
     <nav className="nav">
       <div className="nav__brand">
-        <h2>Finance Helper</h2>
+        <h2>Probono Finance</h2>
       </div>
       <ul className="nav__menu">
         {navigationData.map(({ href, label }) => (
