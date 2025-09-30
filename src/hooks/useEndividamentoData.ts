@@ -19,8 +19,8 @@ export const useEndividamentoData = () => {
       setLoading(true);
       setError(null);
       
-      // Simula latência de API real com dados de 2025
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      // Carregamento instantâneo para melhor UX
+      await new Promise(resolve => setTimeout(resolve, 100));
       
       // Adiciona pequena variação para simular dados em tempo real
       const dataWithVariation = {
@@ -78,8 +78,8 @@ export const useEstatisticasGerais = () => {
       setLoading(true);
       setError(null);
       
-      // Simula um delay de carregamento diferente para demonstrar carregamentos independentes
-      await new Promise(resolve => setTimeout(resolve, 800));
+      // Carregamento rápido para melhor experiência
+      await new Promise(resolve => setTimeout(resolve, 50));
       
       setStats(mockEstatisticasGerais);
       

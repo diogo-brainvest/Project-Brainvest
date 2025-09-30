@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Footer from '../components/sections/Footer';
 import './NoticiaPix.css';
 
 const PrimeirosPassosInvestir: React.FC = () => {
@@ -72,11 +73,7 @@ const PrimeirosPassosInvestir: React.FC = () => {
       </main>
 
       {/* Footer */}
-      <footer className="footer">
-        <div className="container">
-          <p>&copy; 2025 Finance Helper - Dados baseados em pesquisas do SPC Brasil</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

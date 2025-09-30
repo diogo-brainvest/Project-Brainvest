@@ -19,13 +19,17 @@ export const useSmoothScroll = () => {
   }, []);
 
   const handleNavigateToSection = useCallback((sectionId: string) => {
+    console.log('handleNavigateToSection chamado com:', sectionId);
     const element = document.getElementById(sectionId);
     
     if (element) {
+      console.log('Elemento encontrado, fazendo scroll para:', element);
       element.scrollIntoView({ 
         behavior: 'smooth',
         block: 'start'
       });
+    } else {
+      console.log('Elemento não encontrado com ID:', sectionId);
     }
   }, []);
 

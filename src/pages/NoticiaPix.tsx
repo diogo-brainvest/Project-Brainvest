@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Header from '../components/sections/Header';
+import Footer from '../components/sections/Footer';
 import './NoticiaPix.css';
 
 const NoticiaPix: React.FC = () => {
@@ -9,19 +11,9 @@ const NoticiaPix: React.FC = () => {
   };
 
   return (
-    <div className="noticia-page">
-      {/* Header */}
-      <header className="header">
-        <div className="container">
-          <Link to="/" className="logo">Finance Helper</Link>
-          <nav className="nav">
-            <Link to="/" className="nav-link">Home</Link>
-            <button onClick={() => scrollToSection('investimentos')} className="nav-link">Investimentos</button>
-            <button onClick={() => scrollToSection('dicas')} className="nav-link">Dicas</button>
-            <button onClick={() => scrollToSection('sobre')} className="nav-link">Sobre</button>
-          </nav>
-        </div>
-      </header>
+    <div className="noticia-page-container">
+      {/* Header Componente */}
+      <Header />
 
       {/* Conteúdo Principal */}
       <main className="noticia-main">
@@ -214,11 +206,7 @@ const NoticiaPix: React.FC = () => {
       </main>
 
       {/* Footer */}
-      <footer className="footer">
-        <div className="container">
-          <p>&copy; 2025 Finance Helper - Dados baseados em pesquisas do SPC Brasil</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

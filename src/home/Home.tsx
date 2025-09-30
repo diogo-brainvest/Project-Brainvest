@@ -6,6 +6,7 @@ import { useSmoothScroll } from '../hooks/useSmoothScroll';
 import Header from '../components/sections/Header';
 import HeroSection from '../components/sections/HeroSection';
 import DashboardSection from '../components/sections/DashboardSection';
+import TipsSection from '../components/sections/TipsSection';
 import BlogSection from '../components/sections/BlogSection';
 import CTASection from '../components/sections/CTASection';
 import Footer from '../components/sections/Footer';
@@ -59,6 +60,8 @@ const Home: React.FC = () => {
         loading={loadingEndividamento} 
         error={errorEndividamento} 
       />
+      
+      <TipsSection onCTAClick={handleCTAClick} />
       
       {/* Seção de Alerta PIX Parcelado */}
       <section className="alerta-pix-section">

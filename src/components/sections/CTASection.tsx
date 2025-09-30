@@ -5,7 +5,7 @@ interface CTASectionProps {
 }
 
 const CTASection: React.FC<CTASectionProps> = ({ onCTAClick }) => (
-  <section className="cta-section">
+  <section className="cta-section" id="sobre">
     <div className="container">
       <h2>Comece Sua Jornada Hoje</h2>
       <p>Não deixe as dívidas controlarem sua vida. Tome o controle agora.</p>

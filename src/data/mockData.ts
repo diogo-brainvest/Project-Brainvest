@@ -376,6 +376,7 @@ export const tipsData = [
 
 // Dados de navegação
 export const navigationData = [
+  { href: '/', label: 'Home' },
   { href: '#dados', label: 'Dados' },
   { href: '#dicas', label: 'Dicas' },
   { href: '#blog', label: 'Blog' },
