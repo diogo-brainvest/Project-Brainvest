@@ -671,7 +671,15 @@
   }
   
   .blog-title {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
+  }
+  
+  .main-news-title {
+    font-size: 1.1rem;
+  }
+  
+  .news-card-title {
+    font-size: 0.9rem;
   }
 
   .ticker-items {

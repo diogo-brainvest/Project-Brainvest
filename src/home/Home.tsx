@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { useEndividamentoData, useEstatisticasGerais } from '../hooks/useEndividamentoData';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { useSmoothScroll } from '../hooks/useSmoothScroll';
@@ -62,27 +61,6 @@ const Home: React.FC = () => {
       />
       
       <TipsSection onCTAClick={handleCTAClick} />
-      
-      {/* Seção de Alerta PIX Parcelado */}
-      <section className="alerta-pix-section">
-        <div className="container">
-          <div className="alerta-container">
-            <div className="alerta-icon">🚨</div>
-            <div className="alerta-content">
-              <h3>BC Alerta: PIX Parcelado Pode Ser Regulamentado em 2025</h3>
-              <p>
-                Após crescimento explosivo de 187%, Banco Central estuda regras para modalidade. 
-                Especialistas alertam para riscos de endividamento e necessidade de proteção ao consumidor.
-              </p>
-            </div>
-            <div className="alerta-action">
-              <Link to="/noticia/pix-parcelado-2025" className="btn-alerta">
-                Ler Matéria Completa
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
       
       <BlogSection onCTAClick={handleCTAClick} />
       
