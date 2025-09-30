@@ -382,3 +382,264 @@ export const navigationData = [
   { href: '#blog', label: 'Blog' },
   { href: '#sobre', label: 'Sobre' }
 ];
+
+// ========== DADOS ESPECÍFICOS PARA A PÁGINA DO BLOG ==========
+// Baseado nas notícias da InfoMoney - 30/09/2025
+
+export const blogPageData = {
+  // Artigo em destaque principal
+  featuredArticle: {
+    id: 'featured-main',
+    title: 'LCAs e LCIs Crescem 43% com Corrida Antes de Possível Fim da Isenção',
+    excerpt: 'MP que pode criar IR de 17,5% sobre LCAs e LCIs pode ser votada esta semana no Congresso. Investidores correm para garantir isenção fiscal antes da possível mudança na tributação.',
+    content: 'A Medida Provisória 1.303/2025 que prevê a cobrança de Imposto de Renda de 17,5% sobre LCAs e LCIs movimentou o mercado financeiro...',
+    date: '30 Set 2025',
+    readTime: '6 min',
+    category: 'urgent',
+    author: 'InfoMoney',
+    image: '💰',
+    tags: ['IR', 'LCA', 'LCI', 'Investimentos', 'Congresso'],
+    trend: '+43%',
+    views: 15420,
+    shares: 892
+  },
+
+  // Categorias para filtros
+  categories: [
+    { id: 'all', name: 'Todos', count: 24 },
+    { id: 'urgent', name: 'Urgente', count: 6 },
+    { id: 'investment', name: 'Investimentos', count: 8 },
+    { id: 'educational', name: 'Educacional', count: 5 },
+    { id: 'tips', name: 'Dicas', count: 3 },
+    { id: 'planning', name: 'Planejamento', count: 2 }
+  ],
+
+  // Artigos principais da página do blog
+  articles: [
+    {
+      id: 1,
+      title: 'B3: Fluxo Estrangeiro Acelera para R$ 4,8 Bilhões em Setembro',
+      excerpt: 'Capital estrangeiro volta com força para a bolsa brasileira enquanto fundos locais realizam lucros. Cenário otimista para outubro.',
+      date: '30 Set 2025',
+      readTime: '4 min',
+      category: 'investment',
+      author: 'InfoMoney',
+      image: '📈',
+      tags: ['B3', 'Estrangeiros', 'Investimentos', 'Bolsa'],
+      trend: '+R$ 4,8bi',
+      views: 8745,
+      featured: true,
+      url: 'https://www.infomoney.com.br/mercados/fluxo-estrangeiro-na-bolsa-acelera-em-setembro-para-r-48-bi-fundos-locais-vendem/'
+    },
+    {
+      id: 2,
+      title: 'Batalha das Reservas: Dólar Perde Espaço, Ouro Avança e Bitcoin Pode Entrar',
+      excerpt: 'Bancos centrais diversificam reservas internacionais. Ouro atinge recordes históricos e Bitcoin ganha credibilidade como reserva de valor.',
+      date: '30 Set 2025',
+      readTime: '7 min',
+      category: 'educational',
+      author: 'InfoMoney',
+      image: '🏆',
+      tags: ['Reservas', 'Ouro', 'Bitcoin', 'Dólar'],
+      trend: 'Diversificação',
+      views: 12330,
+      url: 'https://www.infomoney.com.br/onde-investir/a-batalha-das-reservas-dolar-perde-espaco-ouro-avanca-e-bitcoin-pode-entrar-no-jogo/'
+    },
+    {
+      id: 3,
+      title: 'WEG Vai Investir R$ 1,1 Bilhão em Expansão Fabril em Santa Catarina',
+      excerpt: 'Empresa anuncia mega investimento para ampliar capacidade produtiva. Ações sobem 4,2% com a notícia positiva.',
+      date: '30 Set 2025',
+      readTime: '3 min',
+      category: 'investment',
+      author: 'WEG',
+      image: '🏭',
+      tags: ['WEG', 'WEGE3', 'Investimento', 'Indústria'],
+      trend: '+4,2%',
+      views: 6890,
+      url: 'https://www.weg.net/institutional/BR/pt/news/resultados-e-investimentos/weg-anuncia-investimentos-de-r-1-1-bilhao-para-expansao-fabril-em-santa-catarina'
+    },
+    {
+      id: 4,
+      title: 'PIX Terá Botão para Contestar Fraudes a Partir de 1º de Outubro',
+      excerpt: 'Banco Central implementa nova funcionalidade para aumentar segurança das transações PIX. Saiba como ativar e usar a proteção.',
+      date: '30 Set 2025',
+      readTime: '4 min',
+      category: 'tips',
+      author: 'Banco Central',
+      image: '🛡️',
+      tags: ['PIX', 'Segurança', 'BC', 'Fraudes'],
+      trend: 'Segurança+',
+      views: 9240,
+      urgent: true,
+      url: 'https://agenciagov.ebc.com.br/noticias/202509/pix-tera-botao-de-contestacao'
+    },
+    {
+      id: 5,
+      title: 'Renda Fixa Hoje: CDBs Pagam até 14,35% - Veja Outras Taxas',
+      excerpt: 'Levantamento exclusivo mostra as melhores oportunidades em renda fixa disponíveis hoje no mercado brasileiro.',
+      date: '30 Set 2025',
+      readTime: '5 min',
+      category: 'investment',
+      author: 'XP Investimentos',
+      image: '💵',
+      tags: ['CDB', 'Renda Fixa', 'Taxas', 'Investimentos'],
+      trend: '14,35%',
+      views: 11560,
+      url: 'https://www.infomoney.com.br/onde-investir/renda-fixa-hoje-30092025/'
+    },
+    {
+      id: 6,
+      title: 'FIIs de Shoppings Sobem 18% no Ano e Atraem Movimentos Bilionários',
+      excerpt: 'Fundos imobiliários de shopping centers lideram alta no setor. Gestoras fazem movimentos bilionários no segmento.',
+      date: '29 Set 2025',
+      readTime: '5 min',
+      category: 'investment',
+      author: 'InfoMoney',
+      image: '🏬',
+      tags: ['FIIs', 'Shopping', 'Imobiliário', 'Investimentos'],
+      trend: '+18%',
+      views: 7820,
+      url: 'https://www.infomoney.com.br/onde-investir/fiis-de-shoppings-sobem-18-no-ano-e-atraem-movimentos-bilionarios-de-gestoras/'
+    },
+    {
+      id: 7,
+      title: 'Galípolo é Apontado como Líder em Ascensão pela Revista Time',
+      excerpt: 'Futuro presidente do Banco Central brasileiro ganha destaque internacional. Mercado aposta em continuidade da política monetária.',
+      date: '29 Set 2025',
+      readTime: '4 min',
+      category: 'educational',
+      author: 'InfoMoney',
+      image: '🎯',
+      tags: ['Galípolo', 'BC', 'Política Monetária', 'Time'],
+      trend: 'Destaque',
+      views: 5670,
+      url: 'https://www.infomoney.com.br/politica/'
+    },
+    {
+      id: 8,
+      title: 'Shutdown nos EUA: O Que É e Quais os Impactos para o Brasil',
+      excerpt: 'Entenda como a paralisação do governo americano pode afetar diretamente a economia brasileira e seus investimentos.',
+      date: '29 Set 2025',
+      readTime: '6 min',
+      category: 'educational',
+      author: 'InfoMoney',
+      image: '🇺🇸',
+      tags: ['EUA', 'Shutdown', 'Economia', 'Brasil'],
+      trend: 'Global',
+      views: 8940,
+      url: 'https://www.infomoney.com.br/economia/shutdown-nos-eua-o-que-e-por-que-acontece-e-quais-os-impactos-de-uma-paralisacao/'
+    },
+    {
+      id: 9,
+      title: 'Previdência Pública Vai Custar R$ 1 Trilhão em 2026',
+      excerpt: 'Estudo aponta insustentabilidade do sistema previdenciário brasileiro. Veja como se proteger e planejar sua aposentadoria.',
+      date: '29 Set 2025',
+      readTime: '8 min',
+      category: 'planning',
+      author: 'InfoMoney',
+      image: '👴',
+      tags: ['Previdência', 'Aposentadoria', 'Planejamento', 'INSS'],
+      trend: 'R$ 1 tri',
+      views: 13240,
+      urgent: true,
+      url: 'https://www.infomoney.com.br/minhas-financas/previdencia-publica-vai-custar-r-1-tri-em-2026-e-pode-nao-bancar-sua-aposentadoria/'
+    },
+    {
+      id: 10,
+      title: 'Portugal Aprova Nova Lei que Endurece Regras para Brasileiros',
+      excerpt: 'Mudanças na legislação portuguesa afetam significativamente a imigração brasileira. Entenda os novos requisitos.',
+      date: '29 Set 2025',
+      readTime: '5 min',
+      category: 'educational',
+      author: 'G1',
+      image: '🇵🇹',
+      tags: ['Portugal', 'Imigração', 'Brasileiros', 'Lei'],
+      trend: 'Mudança',
+      views: 16780,
+      url: 'https://g1.globo.com/mundo/'
+    },
+    {
+      id: 11,
+      title: 'Como Juntar Dinheiro para Viagem em Casal: Dicas de Especialistas',
+      excerpt: 'Estratégias práticas para casais economizarem juntos e realizarem o sonho da viagem. Inclui planilha gratuita para download.',
+      date: '28 Set 2025',
+      readTime: '6 min',
+      category: 'tips',
+      author: 'InfoMoney',
+      image: '✈️',
+      tags: ['Economia', 'Viagem', 'Casal', 'Planejamento'],
+      trend: 'Prático',
+      views: 4560,
+      url: 'https://www.infomoney.com.br/consumo/'
+    },
+    {
+      id: 12,
+      title: 'Gol Vira Penny Stock e Tem Até Janeiro para Retomar Cotações',
+      excerpt: 'Ações da companhia aérea precisam subir acima de R$ 1 para não sair do Novo Mercado da B3. Entenda os riscos.',
+      date: '28 Set 2025',
+      readTime: '4 min',
+      category: 'investment',
+      author: 'InfoMoney',
+      image: '✈️',
+      tags: ['GOL', 'GOLL4', 'Penny Stock', 'B3'],
+      trend: 'Risco',
+      views: 9870,
+      urgent: true,
+      url: 'https://www.infomoney.com.br/mercados/'
+    }
+  ],
+
+  // Estatísticas da página do blog
+  stats: {
+    totalArticles: 147,
+    monthlyReaders: 89420,
+    averageReadTime: '5.2 min',
+    newsletterSubscribers: 12340
+  },
+
+  // Newsletter específica do blog
+  newsletter: {
+    title: 'Newsletter Semanal Probono Finance',
+    description: 'Receba toda segunda-feira um resumo das principais notícias que impactam suas finanças',
+    benefits: [
+      '📊 Análise semanal dos mercados',
+      '💡 Dicas exclusivas de investimento',
+      '🚨 Alertas de oportunidades',
+      '📈 Acompanhamento de tendências'
+    ],
+    subscriberCount: 12340
+  }
+};
+
+// Dados específicos para a seção "Últimas do Mercado"
+export const marketNewsData = [
+  {
+    id: 'market-1',
+    title: 'Ibovespa opera em alta de 0,8% com otimismo externo',
+    time: '15:30',
+    trend: '+0,8%',
+    category: 'Bolsa'
+  },
+  {
+    id: 'market-2', 
+    title: 'Dólar recua para R$ 5,45 com entrada de capital estrangeiro',
+    time: '15:15',
+    trend: '-1,2%',
+    category: 'Câmbio'
+  },
+  {
+    id: 'market-3',
+    title: 'Petróleo sobe 2,3% com tensões no Oriente Médio',
+    time: '14:45',
+    trend: '+2,3%',
+    category: 'Commodities'
+  },
+  {
+    id: 'market-4',
+    title: 'Bitcoin volta aos US$ 66 mil com otimismo regulatório',
+    time: '14:20',
+    trend: '+4,7%',
+    category: 'Crypto'
+  }
+];

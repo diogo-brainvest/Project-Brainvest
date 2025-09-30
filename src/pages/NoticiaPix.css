@@ -764,13 +764,13 @@
 
 /* Estilos específicos para página do cartão de crédito */
 .alert-box {
-  background: linear-gradient(135deg, var(--danger-color), #dc2626);
+  background: var(--gradient);
   color: var(--white);
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin: 2rem 0;
+  border-radius: 16px;
+  padding: 2rem;
   text-align: center;
-  box-shadow: 0 8px 25px rgba(239, 68, 68, 0.3);
+  margin-top: 3rem;
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
 }
 
 .alert-box h3 {
